@@ -1,21 +1,20 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { changeTitleAction } from "../../redux/actions";
 
 function MainPage() {
 
-    const title = useSelector(state => state.title)
+    const title = useSelector(state => state.titleReducer.title)
     const dispatch = useDispatch()
 
-    const changeTitle = () => {
-        dispatch({
-            type: 'CHANGE_TITLE'
-        })
+    const handleChangeTitle = () => {
+        dispatch(changeTitleAction())
     }
     
     return (
         <div>
             <h1>{title}</h1>
-            <button onClick={changeTitle}>change title</button>
+            <button onClick={handleChangeTitle}>change title</button>    
         </div>
     )
 }

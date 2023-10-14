@@ -1,24 +1,16 @@
 import React from "react";
-import Menu from "../../components/Menu";
 import { useDispatch } from "react-redux";
+import { asyncFunctionAction } from "../../redux/actions";
 
 function AboutPage() {
 
     const dispatch = useDispatch()
 
-    const handleMenu = () => {
-        dispatch({
-            type: "HANDLE_MENU"
-        })
-    }
-
     return (
         <div>
-            <button onClick={handleMenu}>Menu</button>
-            <Menu />
+            <button onClick={() => dispatch(asyncFunctionAction())}>after 2 sec</button>
         </div>
     )
-
 }
 
-export default AboutPage 
+export default AboutPage
