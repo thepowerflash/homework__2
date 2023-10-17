@@ -1,4 +1,5 @@
 export const types = {
     HANDLE_CHANGE: 'HANDLE_CHANGE',
-    USERS: "USERS"
+    USERS: "USERS",
+    ONEUSERS: "ONEUSERS"
 }
